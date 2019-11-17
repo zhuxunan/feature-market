@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>  
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.beagledata.featuremarket.shiro.orm.mapper.PermissionMapper">
+	<resultMap type="Permission" id="PermissionResultMap">
+		<id column="id" property="id" />
+		<result column="code" property="code" />
+		<result column="name" property="name" />
+	</resultMap>
+	
+	<select id="listByRole" resultMap="PermissionResultMap">
+		SELECT p.id,code,p.name
+		FROM t_permission p JOIN t_role_permission rp ON p.id=rp.permission_id
+		WHERE rp.role_id=#{roleId}
+	</select>
+	<select id="selectList" resultMap="PermissionResultMap">
+		SELECT id,code,name
+		FROM t_permission
+	</select>
+</mapper>

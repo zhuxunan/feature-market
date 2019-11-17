@@ -1,0 +1,14 @@
+spring:
+  profiles:
+    active: dev
+
+server:
+  servlet:
+    context-path: /feature-market
+  port: 8081
+  tomcat:
+    uri-encoding: UTF-8
+  
+mybatis:
+  mapper-locations: classpath:mapper/**/*.xml
+  type-aliases-package: com.beagledata.featuremarket

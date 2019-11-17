@@ -1,0 +1,31 @@
+#datasource
+spring:
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://47.94.172.233/featuremarket?useUnicode=true&allowMultiQueries=true&characterEncoding=UTF-8
+    username: groupon
+    password: Groupon@2018
+
+## redis
+  redis:
+    database: 1
+    host: 47.93.192.144
+    port: 6379
+    password: guozichang
+    pool:
+      max-idle: 8
+      max-active: 8
+      max-wait: -1
+    timeout: 5000
+
+##shiro redis
+  shiro:
+    redis:
+      database: 3
+      host: 47.93.192.144
+      port: 6379
+      password: guozichang
+      timeout: 5000
+
+default-configs:
+  application-url: http://192.168.100.23:8081/feature-market

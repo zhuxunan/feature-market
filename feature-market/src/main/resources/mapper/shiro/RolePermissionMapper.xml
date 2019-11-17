@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>  
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.beagledata.featuremarket.shiro.orm.mapper.RolePermissionMapper">
+	<resultMap type="RolePermission" id="RolePermissionResultMap">
+		<id column="id" property="id" />
+		<result column="role_id" property="roleId" />
+		<result column="permission_id" property="permissionId" />
+	</resultMap>
+	<insert id="insert">
+		INSERT INTO
+		t_role_permission(role_id,permission_id)
+		VALUES(#{roleId},#{permissionId})
+	</insert>
+	<delete id="deleteByRole">
+		DELETE FROM
+		t_role_permission
+		WHERE role_id = #{param1}
+	</delete>
+	<update id="update">
+		update 
+		t_role_permission
+		SET permission_id = #{param2}
+		WHERE role_id = #{param1}
+	</update>
+</mapper>

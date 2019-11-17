@@ -1,0 +1,31 @@
+#datasource
+spring:
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/feature-market?useUnicode=true&allowMultiQueries=true&characterEncoding=UTF-8
+    username: groupon
+    password: Groupon@2018
+
+## redis
+  redis:
+    database: 1
+    host: localhost
+    port: 6379
+    password: 1GTPm0nGyNWd0bJ9Q68AMsl2fSKuI1oymmmhapNlRJvsmaWdjgP2XMJ1RjG7Ld13
+    pool:
+      max-idle: 8
+      max-active: 8
+      max-wait: -1
+    timeout: 5000
+
+##shiro redis
+  shiro:
+    redis:
+      database: 3
+      host: localhost
+      port: 6379
+      password: 1GTPm0nGyNWd0bJ9Q68AMsl2fSKuI1oymmmhapNlRJvsmaWdjgP2XMJ1RjG7Ld13
+      timeout: 5000
+
+default-configs:
+  application-url: http://weshopapi.sprebate.com
